@@ -264,14 +264,14 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(10);
   doc.setTextColor(PALETTE.darkText[0] + 20);
-  doc.text('Date: ____________________', 20, 42);
-  doc.text('Overall Feeding Target: _______________ oz/ml', 110, 42);
+  doc.text('Date: ____________________', 20, 43);
+  doc.text('Overall Feeding Target: _______________ oz/ml', 110, 43);
 
   // Table setup
-  const headers = ['Time', 'Breast (L/R)', 'Formula (oz)', 'Solid Food / Type', 'Diaper (W/D)', 'Notes'];
+  const headers = ['Time', 'Breast (L/R)', 'Formula (oz)', 'Solid Food', 'Diaper (W/D)', 'Notes'];
   const colWidths = [18, 30, 24, 34, 26, 38];
   const tableXStart = 20;
-  const tableYStart = 50;
+  const tableYStart = 51;
   const rowHeight = 12;
 
   // Draw Header Row
@@ -344,13 +344,13 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.setTextColor(PALETTE.darkText[0]);
-  doc.text('1. Sleep Session Tracker (Naps & Overnight)', 20, 44);
+  doc.text('1. Sleep Session Tracker (Naps & Overnight)', 20, 43);
 
   // Draw Sleep Grid
-  const sleepHeaders = ['Time Began', 'Time Woke Up', 'Nap Duration', 'Quality / Soundness', 'Woke Up Feeling...'];
+  const sleepHeaders = ['Time Began', 'Time Woke Up', 'Nap Duration', 'Sleep Quality', 'Wake Up Mood'];
   const sleepWidths = [30, 30, 30, 40, 40];
   const sX = 20;
-  const sY = 48;
+  const sY = 51;
   const sRowH = 10;
 
   doc.setFillColor(PALETTE.tanBeige[0], PALETTE.tanBeige[1], PALETTE.tanBeige[2]);
@@ -384,12 +384,12 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.setTextColor(PALETTE.darkText[0]);
-  doc.text('2. Diaper Change log & Health Indicators', 20, 142);
+  doc.text('2. Diaper Change log & Health Indicators', 20, 135);
 
-  const diaperHeaders = ['Time', 'Wet?', 'Dirty?', 'Consistency', 'Color (Tan/Mustard/Green)', 'Actions Taken (Creams, etc)'];
+  const diaperHeaders = ['Time', 'Wet?', 'Dirty?', 'Consistency', 'Stool Color', 'Care / Creams'];
   const diaperWidths = [22, 22, 22, 34, 34, 36];
   const dX = 20;
-  const dY = 146;
+  const dY = 143;
   const dRowH = 10;
 
   doc.setFillColor(PALETTE.babyPink[0], PALETTE.babyPink[1], PALETTE.babyPink[2]);
@@ -437,13 +437,13 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
-  doc.text('Immunization Log: First 24 Months Scheduled Shots', 20, 44);
+  doc.text('Immunization Log: First 24 Months Scheduled Shots', 20, 43);
 
   // Table structure
-  const vaccHeaders = ['Shot Name', 'Age Recommended', 'Target Condition', 'Date Administered', 'Batch / Clinic', 'Notes / Side Effects'];
+  const vaccHeaders = ['Shot Name', 'Recommended Age', 'Target Disease', 'Date Given', 'Batch / Clinic', 'Wellness Notes'];
   const vaccWidths = [30, 28, 32, 26, 26, 28];
   const vX = 20;
-  const vY = 48;
+  const vY = 51;
   const vRowH = 12;
 
   doc.setFillColor(PALETTE.sageGreen[0], PALETTE.sageGreen[1], PALETTE.sageGreen[2]);
@@ -496,12 +496,12 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
   // Doctor visit list
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
-  doc.text('Growth Checkups Log (Pediatrician Visits)', 20, 168);
+  doc.text('Growth Checkups Log (Pediatrician Visits)', 20, 171);
 
-  const growHeaders = ['Visit Target', 'Typical Age', 'Weight Recorded', 'Height Recorded', 'Percentiles', 'Doctor Signature'];
+  const growHeaders = ['Visit Target', 'Typical Age', 'Weight', 'Height', 'Percentiles', 'Pediatrician Sign'];
   const growWidths = [28, 24, 28, 28, 30, 32];
   const gX = 20;
-  const gY = 172;
+  const gY = 179;
   const gRowH = 11;
 
   doc.setFillColor(PALETTE.skyBlue[0], PALETTE.skyBlue[1], PALETTE.skyBlue[2]);
@@ -561,9 +561,9 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
-  doc.text('A. Master Milestone Timeline Checkpoints', 20, 44);
+  doc.text('A. Master Milestone Timeline Checkpoints', 20, 43);
 
-  let cY = 50;
+  let cY = 51;
   sChecklists.forEach((ch) => {
     // Checkbox box
     doc.setLineWidth(0.4);
@@ -585,12 +585,12 @@ export function generateBabyDiaryPDF(profile: BabyProfile): Uint8Array {
   // Gift Tracker
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
-  doc.text('B. Guest Gift Registry Logbook & Thank-You Tracker', 20, 122);
+  doc.text('B. Guest Gift Registry Logbook & Thank-You Tracker', 20, 121);
 
-  const giftHeaders = ['Guest Name', 'Gift Presented Description', 'Contact Info (Email/Address)', 'Registry Source', 'Thank-You Sent?'];
+  const giftHeaders = ['Guest Name', 'Gift Description', 'Contact Details', 'Registry Source', 'Thank You?'];
   const giftWidths = [34, 46, 36, 28, 26];
   const gifX = 20;
-  const gifY = 126;
+  const gifY = 129;
   const gifRowH = 11;
 
   doc.setFillColor(PALETTE.babyPink[0], PALETTE.babyPink[1], PALETTE.babyPink[2]);
