@@ -1,0 +1,6 @@
+{
+  "name": "Baby Care Diary",
+  "description": "Complete digital baby planner & memory journal (0-5 years) for modern parents. Ready to print, iPad friendly, and GoodNotes compatible.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

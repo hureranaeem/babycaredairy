@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-sage-light: #F4F6F2;
+  --color-brand-sage: #CBD5C0;
+  --color-brand-sage-dark: #A5B396;
+  
+  --color-brand-pink-light: #FAF2F2;
+  --color-brand-pink: #F5D6D6;
+  --color-brand-pink-dark: #E2A2A2;
+  
+  --color-brand-blue-light: #F2F6FB;
+  --color-brand-blue: #D6E4F5;
+  --color-brand-blue-dark: #A6BCE2;
+  
+  --color-brand-beige-light: #FAF8F5;
+  --color-brand-beige: #E0CCBE;
+  --color-brand-beige-dark: #B8A090;
+  
+  --color-brand-cream: #F9F7F2;
+  --color-brand-ink: #433E3A;
+}
+
+/* Elegant styles for organic layout and subtle animations */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-ink);
+}
+
+/* Custom background dots or grid elements for a cozy scrapbook vibe */
+.scrapbook-grid {
+  background-image: radial-gradient(#CBD5C0 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.scrapbook-grid-subtle {
+  background-image: radial-gradient(#E0CCBE 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
