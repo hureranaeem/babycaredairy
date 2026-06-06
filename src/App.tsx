@@ -51,6 +51,8 @@ import {
 import { FEATURES, CATEGORIES, PREVIEW_PAGES, BENEFITS, TESTIMONIALS, BONUSES, FAQS } from './data';
 import { BabyProfile } from './types';
 import { generateBabyDiaryPDF } from './lib/pdfGenerator';
+import heroMockup from './assets/images/hero_planner_mockup_1780325836636.png';
+import bonusCollage from './assets/images/planner_bonuses_collage_1780325865266.png';
 
 const IconMap: Record<string, React.ComponentType<any>> = {
   User, Activity, ShieldCheck, TrendingUp, ShoppingCart, HeartHandshake, PartyPopper, Clock4,
@@ -400,7 +402,7 @@ export default function App() {
                   <div className="bg-brand-cream rounded-[1.8rem] overflow-hidden aspect-[3/4] relative flex items-center justify-center">
                     
                     <img 
-                      src="/src/assets/images/hero_planner_mockup_1780325836636.png" 
+                      src={heroMockup} 
                       alt="Baby Care Diary Mockup Preview" 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
@@ -1520,7 +1522,7 @@ export default function App() {
           {/* Beautiful collage asset banner */}
           <div className="mt-14 h-48 sm:h-64 rounded-3xl overflow-hidden relative border border-brand-beige/25 shadow-md">
             <img 
-              src="/src/assets/images/planner_bonuses_collage_1780325865266.png" 
+              src={bonusCollage} 
               alt="Watercolor Baby Planner themes collections" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
